@@ -31,7 +31,8 @@ namespace Pizzeria_GUI
         private void btnFinalizarPedido_Click(object sender, EventArgs e)
         {
             instanciaFormPrincipal = new FormPrincipal(unCliente);
-            this.Show();
+            instanciaFormPrincipal.Show();
+            this.Hide();
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -54,15 +55,20 @@ namespace Pizzeria_GUI
                     {
                         unaPizza = new Pizza(Convert.ToDecimal(numericUpDownCantidad.Text), comboBoxTipoPizza.Text, checkedListBoxCoccion.Text);
                         unPedido = new Pedido(unCliente, checkSiNo.CheckOnClick, DateTime.Now, DateTime.Now.AddMinutes(25));
-                        if (unPedido + unaPizza)
+                        if (unPedido + unaPizza == true)
                         {
                             comboBoxTipoPizza.Text = "";
                             numericUpDownCantidad.Text = "";
                             checkedListBoxCoccion.Text = "";
                             checkSiNo.Visible = false;
                             lblPedidoError.Text = "";
+                            lblPedidoError.Visible = false;
                             listBoxPedidos.Items.Add(unaPizza);
                             contadorCLICK++;
+                        }
+                        else
+                        {
+                            lblPedidoError.Text = "Error al sumar";
                         }
                     }
                     else
@@ -74,6 +80,7 @@ namespace Pizzeria_GUI
                             numericUpDownCantidad.Text = "";
                             checkedListBoxCoccion.Text = "";
                             lblPedidoError.Text = "";
+                            lblPedidoError.Visible = false;
                             listBoxPedidos.Items.Add(unaPizza);
                             contadorCLICK++;
                         }
@@ -83,15 +90,18 @@ namespace Pizzeria_GUI
                             && !(string.IsNullOrEmpty(checkSiNo.Text)) && contadorCLICK == 8)
                 {
                         lblPedidoError.Text = "Alcanzo el Maximo de Pizzas.";
+                    lblPedidoError.Visible = true;
                 }
                 else
                     {
                         lblPedidoError.Text = "Faltan Datos del Pedido";
-                    }
+                    lblPedidoError.Visible = true;
+                }
             }
             else
             {
                 lblPedidoError.Text = "Faltan Datos del Cliente";
+                lblPedidoError.Visible = true;
             }
 
 

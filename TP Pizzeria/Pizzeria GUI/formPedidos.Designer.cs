@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.lblTipoDePizza = new System.Windows.Forms.Label();
             this.comboBoxTipoPizza = new System.Windows.Forms.ComboBox();
             this.lblCoccion = new System.Windows.Forms.Label();
@@ -49,18 +48,6 @@
             this.textPedido_Domicilio = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnNuevoCliente
-            // 
-            this.btnNuevoCliente.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNuevoCliente.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnNuevoCliente.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(549, 14);
-            this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(176, 47);
-            this.btnNuevoCliente.TabIndex = 3;
-            this.btnNuevoCliente.Text = "Nuevo  Cliente";
-            this.btnNuevoCliente.UseVisualStyleBackColor = false;
             // 
             // lblTipoDePizza
             // 
@@ -270,7 +257,6 @@
             this.Controls.Add(this.lblCoccion);
             this.Controls.Add(this.comboBoxTipoPizza);
             this.Controls.Add(this.lblTipoDePizza);
-            this.Controls.Add(this.btnNuevoCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -282,7 +268,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnNuevoCliente;
         private System.Windows.Forms.Label lblTipoDePizza;
         private System.Windows.Forms.ComboBox comboBoxTipoPizza;
         private System.Windows.Forms.Label lblCoccion;

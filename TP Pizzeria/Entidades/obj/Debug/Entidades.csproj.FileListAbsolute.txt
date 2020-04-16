@@ -4,3 +4,9 @@ C:\Users\manu_\source\repos\TP Pizzeria\Entidades\obj\Debug\Entidades.csprojAsse
 C:\Users\manu_\source\repos\TP Pizzeria\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\manu_\source\repos\TP Pizzeria\Entidades\obj\Debug\Entidades.dll
 C:\Users\manu_\source\repos\TP Pizzeria\Entidades\obj\Debug\Entidades.pdb
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Entidades\bin\Debug\Entidades.dll
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Entidades\bin\Debug\Entidades.pdb
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Entidades\obj\Debug\Entidades.dll
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Entidades\obj\Debug\Entidades.pdb

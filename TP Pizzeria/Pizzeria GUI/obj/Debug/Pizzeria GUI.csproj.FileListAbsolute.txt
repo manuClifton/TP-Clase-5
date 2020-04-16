@@ -14,3 +14,19 @@ C:\Users\manu_\source\repos\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria_GUI.Form
 C:\Users\manu_\source\repos\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.csproj.CopyComplete
 C:\Users\manu_\source\repos\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.exe
 C:\Users\manu_\source\repos\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.pdb
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\bin\Debug\Pizzeria GUI.exe.config
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\bin\Debug\Pizzeria GUI.exe
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\bin\Debug\Pizzeria GUI.pdb
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\bin\Debug\Entidades.dll
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\bin\Debug\Entidades.pdb
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.csprojAssemblyReference.cache
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria_GUI.FormLogin.resources
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria_GUI.FormPrincipal.resources
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria_GUI.FormCliente.resources
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria_GUI.FormPedidos.resources
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria_GUI.Properties.Resources.resources
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.csproj.GenerateResource.cache
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.csproj.CoreCompileInputs.cache
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.csproj.CopyComplete
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.exe
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.pdb
