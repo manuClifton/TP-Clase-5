@@ -8,7 +8,6 @@ namespace Pizzeria_GUI
     public partial class FormPedidos : Form
     {
         FormPrincipal instanciaFormPrincipal;
-        FormPedidos instanciaFormPedidos;
 
         Pedido unPedido;
 
@@ -28,74 +27,6 @@ namespace Pizzeria_GUI
             unCliente = new Cliente();
         }
 
-        //private void btnCargar_Click(object sender, EventArgs e)
-        //{
-        //    if (!(string.IsNullOrEmpty(comboBoxSelecClient.Text)) && !(string.IsNullOrEmpty(comboBoxTipoPizza.Text)) 
-        //        && !(string.IsNullOrEmpty(numericUpDownCantidad.Text))
-        //        && !(string.IsNullOrEmpty(checkedListBoxCoccion.Text)) && !(string.IsNullOrEmpty(checkSiNo.Text)))
-        //    {
-        //         if (checkSiNo.Visible == true && contadorCLICK == 0)
-        //         {
-        //            unCliente = new Cliente();
-        //            instanciaFormPedidos = new FormPedidos(unCliente);
-        //            instanciaFormPedidos.Show();
-        //            this.Hide();
-        //            DateTime horaIngreso = DateTime.Now;
-        //             DateTime retiro = DateTime.Now.AddMinutes(30);
-        //             unCliente.SetNombre(comboBoxSelecClient.Items.ToString());
-        //             unaPizza = new Pizza(Convert.ToDecimal(numericUpDownCantidad.Text), comboBoxTipoPizza.Text, checkedListBoxCoccion.Text);
-        //             if (unPedido + unaPizza)
-        //             {
-        //                 unPedido = unCliente;
-        //                 unPedido = new Pedido(unCliente, Convert.ToBoolean(checkSiNo.Text), horaIngreso, retiro);
-        //                 comboBoxTipoPizza.Text = "";
-        //                 numericUpDownCantidad.Text = "";
-        //                 checkedListBoxCoccion.Text = "";
-        //                 checkSiNo.Visible = false;
-        //                 lblPedidoError.Text = "";
-        //                 contadorCLICK++;
-        //             }
-        //             else
-        //             {
-        //                 lblPedidoError.Text = "Sucecio un Error";
-        //             }
-        //         }
-        //         else if (checkSiNo.Visible == false && contadorCLICK > 0 && contadorCLICK < 8)
-        //         {
-
-        //             if (!(string.IsNullOrEmpty(comboBoxTipoPizza.Text))
-        //                 && !(string.IsNullOrEmpty(numericUpDownCantidad.Text))
-        //                 && !(string.IsNullOrEmpty(checkedListBoxCoccion.Text)))
-        //             {
-        //                 unaPizza = new Pizza(Convert.ToDecimal(numericUpDownCantidad.Text), comboBoxTipoPizza.Text, checkedListBoxCoccion.Text);
-        //                 if (unPedido + unaPizza)
-        //                 {
-        //                     comboBoxTipoPizza.Text = "";
-        //                     numericUpDownCantidad.Text = "";
-        //                     checkedListBoxCoccion.Text = "";
-        //                     lblPedidoError.Text = "";
-        //                     listBoxPedidos.Items.Add(unaPizza);
-        //                     contadorCLICK++;
-        //                 }
-        //                 else
-        //                 {
-        //                     lblPedidoError.Text = "No hay lugar";
-        //                 }
-        //             }
-        //         }else if (contadorCLICK == 8)
-        //        {
-        //            lblPedidoError.Text = "YA COMPLETO EL MAXIMO DE PEDIDOS";
-        //        }
-                
-                
-        //    }
-        //    else
-        //    {
-        //        lblPedidoError.ForeColor = Color.DarkRed;
-        //        lblPedidoError.Text = "DATOS INVALIDOS, CARGA TODO";
-        //        lblPedidoError.Visible = true;
-        //    }
-        //}//fin Click
 
         private void btnFinalizarPedido_Click(object sender, EventArgs e)
         {
@@ -128,6 +59,7 @@ namespace Pizzeria_GUI
                             comboBoxTipoPizza.Text = "";
                             numericUpDownCantidad.Text = "";
                             checkedListBoxCoccion.Text = "";
+                            checkSiNo.Visible = false;
                             lblPedidoError.Text = "";
                             listBoxPedidos.Items.Add(unaPizza);
                             contadorCLICK++;
