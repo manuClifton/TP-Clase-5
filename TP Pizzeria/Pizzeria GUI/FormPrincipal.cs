@@ -13,87 +13,93 @@ namespace Pizzeria_GUI
 {
     public partial class FormPrincipal : Form
     {
-        FormPrincipal instanciaFormPrincipal;
-
         FormPedidos instanciaFormPedidos;
+        FormCliente instanciaCliente;
 
         Pedido unPedido;
-        Pedido[] pedidos;
+        List<Cliente> clientes;
+        Queue<Pedido> pedidos;
 
 
         public FormPrincipal()
         {
             InitializeComponent();
+            this.pedidos = new Queue<Pedido>();
+            this.clientes = new List<Cliente>();
         }
 
 
-
-        public FormPrincipal(Cliente unCliente) :this()
-        {
-            unPedido = unCliente;
-        }
-
-
-
-
-        //private void agregarAutoToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-
-        //    instanciaFormPedidos = new FormPedidos()
-        //    frm_auto.ShowDialog();
-        //    //this.Hide();
-
-        //    if (frm_auto.DialogResult == DialogResult.OK)
-        //    {
-        //        MessageBox.Show("El auto fue agregado satisfactoriamente",
-        //                                     "Confirmacion",
-        //                                     MessageBoxButtons.OK,
-        //                                     MessageBoxIcon.Information);
-        //    }
-        //    else if (frm_auto.DialogResult == DialogResult.No)
-        //    {
-
-        //        MessageBox.Show("Error. El auto ya existe. \nCompruebe los datos e intente nuevamente",
-        //                        "ERROR",
-        //                        MessageBoxButtons.OK,
-        //                        MessageBoxIcon.Error);
-        //    }
-        //    else if (frm_auto.DialogResult == DialogResult.Abort)
-        //    {
-        //        MessageBox.Show("Error. No hay más espacio disponible en el estacionamiento",
-        //                                "ERROR",
-        //                                MessageBoxButtons.OK,
-        //                                MessageBoxIcon.Warning);
-        //    }
-        //    this.CargarTabla();
-        //}
 
 
          private void btnNuevoPedido_Click(object sender, EventArgs e)
         {
-            instanciaFormPedidos = new FormPedidos();
-            instanciaFormPedidos.Show();
-            this.Hide();
+            if (this.listClientes.SelectedIndex != -1)
+            {
+                instanciaFormPedidos = new FormPedidos((Cliente)this.clientes[this.listClientes.SelectedIndex]);
+                if (instanciaFormPedidos.ShowDialog() == DialogResult.OK)
+                {
+                    this.pedidos.Enqueue(instanciaFormPedidos.unPedido);
+                    cargarPedidos();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Primero seleccione un cliente");
+            }
+            
         }
 
-
-
-        private void CargarTabla()
+        private void cargarPedidos()
         {
-            dataGrid_ListaPedidos.Rows.Clear();
-            int fila = 0;
-            foreach (Pizza pizzaAux in unPedido.RetornarArrayPizzas())
+            foreach (Pedido item in this.pedidos)
             {
-                if (!(pizzaAux is null))
-                {
-                    fila = dataGrid_ListaPedidos.Rows.Add();
-                    dataGrid_ListaPedidos.Rows[fila].Cells[0].Value = pizzaAux.GetGusto();
-                    dataGrid_ListaPedidos.Rows[fila].Cells[1].Value = pizzaAux.GetTipoCoccion();
-                    dataGrid_ListaPedidos.Rows[fila].Cells[2].Value = pizzaAux.GetCantidadPizzas();
-                }
+                this.dgPendientes.Rows.Add(item.MostrarPedido());
             }
         }
 
-      
-    }
-}
+        //private void CargarTabla()
+        //{
+        //    dgPendientes.Rows.Clear();
+        //    int fila = 0;
+        //    foreach (Pizza pizzaAux in unPedido.RetornarArrayPizzas())
+        //    {
+        //        if (!(pizzaAux is null))
+        //        {
+        //            fila = dgPendientes.Rows.Add();
+        //            dgPendientes.Rows[fila].Cells[0].Value = pizzaAux.GetGusto();
+        //            dgPendientes.Rows[fila].Cells[1].Value = pizzaAux.GetTipoCoccion();
+        //            dgPendientes.Rows[fila].Cells[2].Value = pizzaAux.GetCantidadPizzas();
+        //        }
+        //    }
+        //}
+
+
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            instanciaCliente = new FormCliente();
+            if (instanciaCliente.ShowDialog() == DialogResult.OK)
+            {
+                this.clientes.Add(instanciaCliente.unCliente);
+                //this.listClientes.Items.Add(instanciaCliente.unCliente);
+                cargarClientes();
+            }
+        }
+
+
+        private void cargarClientes()
+        {
+            listClientes.Items.Clear();
+            foreach (Cliente item in this.clientes)
+            {
+                listClientes.Items.Add(item.MostrarCliente());
+            }
+        }
+
+
+
+
+
+
+    }//
+}//

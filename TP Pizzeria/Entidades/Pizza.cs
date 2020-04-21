@@ -31,6 +31,23 @@ namespace Entidades
             return this.cantidad.ToString();
         }
 
+        public string MostrarPizza()
+        {
+            return "Gusto: "+GetGusto() + " Cocion:s " + GetTipoCoccion() + " Cantidad: " + GetCantidadPizzas();
+        }
+
+        public static bool operator +(Pizza uno, Pizza dos)
+        {
+            bool agrego = false;
+
+            if (uno == dos)
+            {
+                //uno.cantidad = uno.cantidad + dos.cantidad;
+                uno.cantidad += dos.cantidad;
+                agrego = true;
+            }
+            return agrego;
+        }
 
         public static bool operator ==(Pizza a, Pizza b)
         {
@@ -40,7 +57,7 @@ namespace Entidades
             //    igual = true;
             //}
             //return igual;
-            return (a != null && a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion);
+            return (a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion);
         }
 
 
@@ -52,21 +69,10 @@ namespace Entidades
             //    igual = false;
             //}
             //return igual;
-            return !(a != null && a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion);
+            return !( a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion);
         }
 
-        public static bool operator +(Pizza uno, Pizza dos)
-        {
-            bool agrego = false;
-          
-            if ( uno == dos )
-            {
-                //uno.cantidad = uno.cantidad + dos.cantidad;
-                uno.cantidad += dos.cantidad;
-                agrego = true;
-            }
-            return agrego;
-        }
+        
 
 
     }//

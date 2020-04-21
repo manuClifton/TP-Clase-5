@@ -28,58 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTipoDePizza = new System.Windows.Forms.Label();
-            this.comboBoxTipoPizza = new System.Windows.Forms.ComboBox();
+            this.lb_Gusto = new System.Windows.Forms.Label();
+            this.cmbGusto = new System.Windows.Forms.ComboBox();
             this.lblCoccion = new System.Windows.Forms.Label();
             this.lblCantidad = new System.Windows.Forms.Label();
-            this.checkedListBoxCoccion = new System.Windows.Forms.CheckedListBox();
-            this.lblEnvio = new System.Windows.Forms.Label();
-            this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
-            this.listBoxPedidos = new System.Windows.Forms.ListBox();
-            this.btnCargar = new System.Windows.Forms.Button();
+            this.numCantidad = new System.Windows.Forms.NumericUpDown();
+            this.listPizzas = new System.Windows.Forms.ListBox();
+            this.btnAgregarPizza = new System.Windows.Forms.Button();
             this.btnFinalizarPedido = new System.Windows.Forms.Button();
-            this.checkSiNo = new System.Windows.Forms.CheckedListBox();
             this.lblPedidoError = new System.Windows.Forms.Label();
-            this.lblPedido_Nombre = new System.Windows.Forms.Label();
-            this.lblPedido_Apellido = new System.Windows.Forms.Label();
-            this.lblPedido_Domicilio = new System.Windows.Forms.Label();
-            this.textPedido_Nombre = new System.Windows.Forms.TextBox();
-            this.textPedido_Apellido = new System.Windows.Forms.TextBox();
-            this.textPedido_Domicilio = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).BeginInit();
+            this.cmbCoccion = new System.Windows.Forms.ComboBox();
+            this.checkEnvio = new System.Windows.Forms.CheckBox();
+            this.btnCancelarPedido = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblTipoDePizza
+            // lb_Gusto
             // 
-            this.lblTipoDePizza.AutoSize = true;
-            this.lblTipoDePizza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoDePizza.Location = new System.Drawing.Point(202, 35);
-            this.lblTipoDePizza.Name = "lblTipoDePizza";
-            this.lblTipoDePizza.Size = new System.Drawing.Size(84, 13);
-            this.lblTipoDePizza.TabIndex = 4;
-            this.lblTipoDePizza.Text = "Tipo de Pizza";
+            this.lb_Gusto.AutoSize = true;
+            this.lb_Gusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Gusto.Location = new System.Drawing.Point(72, 234);
+            this.lb_Gusto.Name = "lb_Gusto";
+            this.lb_Gusto.Size = new System.Drawing.Size(92, 13);
+            this.lb_Gusto.TabIndex = 4;
+            this.lb_Gusto.Text = "Gusto de Pizza";
             // 
-            // comboBoxTipoPizza
+            // cmbGusto
             // 
-            this.comboBoxTipoPizza.BackColor = System.Drawing.Color.AliceBlue;
-            this.comboBoxTipoPizza.FormattingEnabled = true;
-            this.comboBoxTipoPizza.Items.AddRange(new object[] {
+            this.cmbGusto.BackColor = System.Drawing.Color.AliceBlue;
+            this.cmbGusto.FormattingEnabled = true;
+            this.cmbGusto.Items.AddRange(new object[] {
             "Muzzarella",
             "Fugazzeta",
             "Especial",
             "Anana(Un Boludo)",
             "Calabreza",
             "De la Casa"});
-            this.comboBoxTipoPizza.Location = new System.Drawing.Point(172, 58);
-            this.comboBoxTipoPizza.Name = "comboBoxTipoPizza";
-            this.comboBoxTipoPizza.Size = new System.Drawing.Size(138, 21);
-            this.comboBoxTipoPizza.TabIndex = 5;
+            this.cmbGusto.Location = new System.Drawing.Point(43, 266);
+            this.cmbGusto.Name = "cmbGusto";
+            this.cmbGusto.Size = new System.Drawing.Size(138, 21);
+            this.cmbGusto.TabIndex = 5;
             // 
             // lblCoccion
             // 
             this.lblCoccion.AutoSize = true;
             this.lblCoccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCoccion.Location = new System.Drawing.Point(351, 14);
+            this.lblCoccion.Location = new System.Drawing.Point(360, 234);
             this.lblCoccion.Name = "lblCoccion";
             this.lblCoccion.Size = new System.Drawing.Size(53, 13);
             this.lblCoccion.TabIndex = 6;
@@ -89,84 +83,51 @@
             // 
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(217, 95);
+            this.lblCantidad.Location = new System.Drawing.Point(227, 234);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(57, 13);
             this.lblCantidad.TabIndex = 7;
             this.lblCantidad.Text = "Cantidad";
             // 
-            // checkedListBoxCoccion
+            // numCantidad
             // 
-            this.checkedListBoxCoccion.BackColor = System.Drawing.Color.AliceBlue;
-            this.checkedListBoxCoccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.checkedListBoxCoccion.FormattingEnabled = true;
-            this.checkedListBoxCoccion.Items.AddRange(new object[] {
-            "A la Piedra",
-            "Media Masa"});
-            this.checkedListBoxCoccion.Location = new System.Drawing.Point(328, 39);
-            this.checkedListBoxCoccion.Name = "checkedListBoxCoccion";
-            this.checkedListBoxCoccion.Size = new System.Drawing.Size(103, 32);
-            this.checkedListBoxCoccion.TabIndex = 10;
+            this.numCantidad.BackColor = System.Drawing.Color.AliceBlue;
+            this.numCantidad.Location = new System.Drawing.Point(217, 267);
+            this.numCantidad.Name = "numCantidad";
+            this.numCantidad.Size = new System.Drawing.Size(81, 20);
+            this.numCantidad.TabIndex = 12;
             // 
-            // lblEnvio
+            // listPizzas
             // 
-            this.lblEnvio.AutoSize = true;
-            this.lblEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnvio.Location = new System.Drawing.Point(443, 14);
-            this.lblEnvio.Name = "lblEnvio";
-            this.lblEnvio.Size = new System.Drawing.Size(46, 13);
-            this.lblEnvio.TabIndex = 11;
-            this.lblEnvio.Text = "Envio?";
+            this.listPizzas.BackColor = System.Drawing.SystemColors.Info;
+            this.listPizzas.FormattingEnabled = true;
+            this.listPizzas.Location = new System.Drawing.Point(21, 12);
+            this.listPizzas.Name = "listPizzas";
+            this.listPizzas.Size = new System.Drawing.Size(530, 186);
+            this.listPizzas.TabIndex = 15;
             // 
-            // numericUpDownCantidad
+            // btnAgregarPizza
             // 
-            this.numericUpDownCantidad.BackColor = System.Drawing.Color.AliceBlue;
-            this.numericUpDownCantidad.Location = new System.Drawing.Point(208, 118);
-            this.numericUpDownCantidad.Name = "numericUpDownCantidad";
-            this.numericUpDownCantidad.Size = new System.Drawing.Size(78, 20);
-            this.numericUpDownCantidad.TabIndex = 12;
-            // 
-            // listBoxPedidos
-            // 
-            this.listBoxPedidos.FormattingEnabled = true;
-            this.listBoxPedidos.Location = new System.Drawing.Point(1, 177);
-            this.listBoxPedidos.Name = "listBoxPedidos";
-            this.listBoxPedidos.Size = new System.Drawing.Size(770, 199);
-            this.listBoxPedidos.TabIndex = 15;
-            // 
-            // btnCargar
-            // 
-            this.btnCargar.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(434, 100);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(91, 53);
-            this.btnCargar.TabIndex = 16;
-            this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseVisualStyleBackColor = false;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            this.btnAgregarPizza.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnAgregarPizza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPizza.Location = new System.Drawing.Point(589, 230);
+            this.btnAgregarPizza.Name = "btnAgregarPizza";
+            this.btnAgregarPizza.Size = new System.Drawing.Size(91, 53);
+            this.btnAgregarPizza.TabIndex = 16;
+            this.btnAgregarPizza.Text = "Agregar Pizza";
+            this.btnAgregarPizza.UseVisualStyleBackColor = false;
+            this.btnAgregarPizza.Click += new System.EventHandler(this.btnAgregarPizza_Click);
             // 
             // btnFinalizarPedido
             // 
             this.btnFinalizarPedido.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnFinalizarPedido.Location = new System.Drawing.Point(549, 95);
+            this.btnFinalizarPedido.Location = new System.Drawing.Point(570, 12);
             this.btnFinalizarPedido.Name = "btnFinalizarPedido";
-            this.btnFinalizarPedido.Size = new System.Drawing.Size(176, 63);
+            this.btnFinalizarPedido.Size = new System.Drawing.Size(110, 48);
             this.btnFinalizarPedido.TabIndex = 17;
             this.btnFinalizarPedido.Text = "Finalizar Pedido";
             this.btnFinalizarPedido.UseVisualStyleBackColor = false;
             this.btnFinalizarPedido.Click += new System.EventHandler(this.btnFinalizarPedido_Click);
-            // 
-            // checkSiNo
-            // 
-            this.checkSiNo.FormattingEnabled = true;
-            this.checkSiNo.Items.AddRange(new object[] {
-            "Si",
-            "No"});
-            this.checkSiNo.Location = new System.Drawing.Point(446, 37);
-            this.checkSiNo.Name = "checkSiNo";
-            this.checkSiNo.Size = new System.Drawing.Size(61, 34);
-            this.checkSiNo.TabIndex = 18;
             // 
             // lblPedidoError
             // 
@@ -179,112 +140,77 @@
             this.lblPedidoError.TabIndex = 19;
             this.lblPedidoError.Visible = false;
             // 
-            // lblPedido_Nombre
+            // cmbCoccion
             // 
-            this.lblPedido_Nombre.AutoSize = true;
-            this.lblPedido_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedido_Nombre.Location = new System.Drawing.Point(12, 9);
-            this.lblPedido_Nombre.Name = "lblPedido_Nombre";
-            this.lblPedido_Nombre.Size = new System.Drawing.Size(50, 13);
-            this.lblPedido_Nombre.TabIndex = 20;
-            this.lblPedido_Nombre.Text = "Nombre";
+            this.cmbCoccion.FormattingEnabled = true;
+            this.cmbCoccion.Items.AddRange(new object[] {
+            "A la Piedra",
+            "Media Maza"});
+            this.cmbCoccion.Location = new System.Drawing.Point(337, 267);
+            this.cmbCoccion.Name = "cmbCoccion";
+            this.cmbCoccion.Size = new System.Drawing.Size(114, 21);
+            this.cmbCoccion.TabIndex = 20;
             // 
-            // lblPedido_Apellido
+            // checkEnvio
             // 
-            this.lblPedido_Apellido.AutoSize = true;
-            this.lblPedido_Apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedido_Apellido.Location = new System.Drawing.Point(12, 58);
-            this.lblPedido_Apellido.Name = "lblPedido_Apellido";
-            this.lblPedido_Apellido.Size = new System.Drawing.Size(52, 13);
-            this.lblPedido_Apellido.TabIndex = 21;
-            this.lblPedido_Apellido.Text = "Apellido";
+            this.checkEnvio.AutoSize = true;
+            this.checkEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEnvio.Location = new System.Drawing.Point(466, 249);
+            this.checkEnvio.Name = "checkEnvio";
+            this.checkEnvio.Size = new System.Drawing.Size(98, 17);
+            this.checkEnvio.TabIndex = 21;
+            this.checkEnvio.Text = "A  domicilio?";
+            this.checkEnvio.UseVisualStyleBackColor = true;
             // 
-            // lblPedido_Domicilio
+            // btnCancelarPedido
             // 
-            this.lblPedido_Domicilio.AutoSize = true;
-            this.lblPedido_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedido_Domicilio.Location = new System.Drawing.Point(9, 111);
-            this.lblPedido_Domicilio.Name = "lblPedido_Domicilio";
-            this.lblPedido_Domicilio.Size = new System.Drawing.Size(58, 13);
-            this.lblPedido_Domicilio.TabIndex = 22;
-            this.lblPedido_Domicilio.Text = "Domicilio";
-            // 
-            // textPedido_Nombre
-            // 
-            this.textPedido_Nombre.BackColor = System.Drawing.Color.AliceBlue;
-            this.textPedido_Nombre.Location = new System.Drawing.Point(12, 28);
-            this.textPedido_Nombre.Name = "textPedido_Nombre";
-            this.textPedido_Nombre.Size = new System.Drawing.Size(111, 20);
-            this.textPedido_Nombre.TabIndex = 23;
-            // 
-            // textPedido_Apellido
-            // 
-            this.textPedido_Apellido.BackColor = System.Drawing.Color.AliceBlue;
-            this.textPedido_Apellido.Location = new System.Drawing.Point(12, 74);
-            this.textPedido_Apellido.Name = "textPedido_Apellido";
-            this.textPedido_Apellido.Size = new System.Drawing.Size(111, 20);
-            this.textPedido_Apellido.TabIndex = 24;
-            // 
-            // textPedido_Domicilio
-            // 
-            this.textPedido_Domicilio.BackColor = System.Drawing.Color.AliceBlue;
-            this.textPedido_Domicilio.Location = new System.Drawing.Point(12, 127);
-            this.textPedido_Domicilio.Name = "textPedido_Domicilio";
-            this.textPedido_Domicilio.Size = new System.Drawing.Size(107, 20);
-            this.textPedido_Domicilio.TabIndex = 25;
+            this.btnCancelarPedido.Location = new System.Drawing.Point(582, 93);
+            this.btnCancelarPedido.Name = "btnCancelarPedido";
+            this.btnCancelarPedido.Size = new System.Drawing.Size(80, 44);
+            this.btnCancelarPedido.TabIndex = 22;
+            this.btnCancelarPedido.Text = "Cancelar Pedido";
+            this.btnCancelarPedido.UseVisualStyleBackColor = true;
             // 
             // FormPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(764, 368);
-            this.Controls.Add(this.textPedido_Domicilio);
-            this.Controls.Add(this.textPedido_Apellido);
-            this.Controls.Add(this.textPedido_Nombre);
-            this.Controls.Add(this.lblPedido_Domicilio);
-            this.Controls.Add(this.lblPedido_Apellido);
-            this.Controls.Add(this.lblPedido_Nombre);
+            this.ClientSize = new System.Drawing.Size(709, 322);
+            this.Controls.Add(this.btnCancelarPedido);
+            this.Controls.Add(this.checkEnvio);
+            this.Controls.Add(this.cmbCoccion);
             this.Controls.Add(this.lblPedidoError);
-            this.Controls.Add(this.checkSiNo);
             this.Controls.Add(this.btnFinalizarPedido);
-            this.Controls.Add(this.btnCargar);
-            this.Controls.Add(this.listBoxPedidos);
-            this.Controls.Add(this.numericUpDownCantidad);
-            this.Controls.Add(this.lblEnvio);
-            this.Controls.Add(this.checkedListBoxCoccion);
+            this.Controls.Add(this.btnAgregarPizza);
+            this.Controls.Add(this.listPizzas);
+            this.Controls.Add(this.numCantidad);
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.lblCoccion);
-            this.Controls.Add(this.comboBoxTipoPizza);
-            this.Controls.Add(this.lblTipoDePizza);
+            this.Controls.Add(this.cmbGusto);
+            this.Controls.Add(this.lb_Gusto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Pedido";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblTipoDePizza;
-        private System.Windows.Forms.ComboBox comboBoxTipoPizza;
+        private System.Windows.Forms.Label lb_Gusto;
+        private System.Windows.Forms.ComboBox cmbGusto;
         private System.Windows.Forms.Label lblCoccion;
         private System.Windows.Forms.Label lblCantidad;
-        private System.Windows.Forms.CheckedListBox checkedListBoxCoccion;
-        private System.Windows.Forms.Label lblEnvio;
-        private System.Windows.Forms.NumericUpDown numericUpDownCantidad;
-        private System.Windows.Forms.ListBox listBoxPedidos;
-        private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.NumericUpDown numCantidad;
+        private System.Windows.Forms.ListBox listPizzas;
+        private System.Windows.Forms.Button btnAgregarPizza;
         private System.Windows.Forms.Button btnFinalizarPedido;
-        private System.Windows.Forms.CheckedListBox checkSiNo;
         private System.Windows.Forms.Label lblPedidoError;
-        private System.Windows.Forms.Label lblPedido_Nombre;
-        private System.Windows.Forms.Label lblPedido_Apellido;
-        private System.Windows.Forms.Label lblPedido_Domicilio;
-        private System.Windows.Forms.TextBox textPedido_Nombre;
-        private System.Windows.Forms.TextBox textPedido_Apellido;
-        private System.Windows.Forms.TextBox textPedido_Domicilio;
+        private System.Windows.Forms.ComboBox cmbCoccion;
+        private System.Windows.Forms.CheckBox checkEnvio;
+        private System.Windows.Forms.Button btnCancelarPedido;
     }
 }

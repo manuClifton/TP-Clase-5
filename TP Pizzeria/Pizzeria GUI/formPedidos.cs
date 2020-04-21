@@ -1,111 +1,75 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
 using Entidades;
 
 namespace Pizzeria_GUI
 {
     public partial class FormPedidos : Form
     {
-        FormPrincipal instanciaFormPrincipal;
+        public Pedido unPedido;
 
-        Pedido unPedido;
 
-        Cliente unCliente;
 
-        Pizza unaPizza;
-
-        int contadorCLICK = 0;
-
-        public FormPedidos()
+        public FormPedidos(Cliente unCliente)
         {
             InitializeComponent();
+            unPedido = unCliente;
         }
 
-        public FormPedidos(Cliente unCliente) :this()
-        {
-            unCliente = new Cliente();
-        }
 
 
         private void btnFinalizarPedido_Click(object sender, EventArgs e)
         {
-            instanciaFormPrincipal = new FormPrincipal(unCliente);
-            instanciaFormPrincipal.Show();
-            this.Hide();
+
+            // Validar
+            if (this.listPizzas.SelectedIndex != -1)
+            {
+               this.unPedido.horaIngreso = DateTime.Now;
+               this.unPedido.envio = checkEnvio.Checked;
+
+               this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Complete los datos que faltan");
+            }
+            
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
+        private void btnAgregarPizza_Click(object sender, EventArgs e)
         {
-
-            if ( !(string.IsNullOrEmpty(textPedido_Nombre.Text))
-                && !(string.IsNullOrEmpty(textPedido_Apellido.Text))
-                && !(string.IsNullOrEmpty(textPedido_Domicilio.Text)) )
+            if ( !(String.IsNullOrEmpty(cmbGusto.Text)) &&
+                 !(String.IsNullOrEmpty(cmbCoccion.Text)) &&
+                 numCantidad.Value != 0  )
             {
-                if (unCliente == null)
+                if (this.unPedido + new Pizza(this.numCantidad.Value,this.cmbGusto.Text,this.cmbCoccion.Text))
                 {
-                    unCliente = new Cliente(textPedido_Nombre.Text, textPedido_Domicilio.Text, textPedido_Apellido.Text);
-                }
-               
-                if (unCliente != null && !string.IsNullOrEmpty(comboBoxTipoPizza.Text)
-                    && !string.IsNullOrEmpty(numericUpDownCantidad.Text)
-                    && !(string.IsNullOrEmpty(checkSiNo.Text))  && contadorCLICK < 8)
-                {
-                    if (unPedido ==  null)
-                    {
-                        unaPizza = new Pizza(Convert.ToDecimal(numericUpDownCantidad.Text), comboBoxTipoPizza.Text, checkedListBoxCoccion.Text);
-                        unPedido = new Pedido(unCliente, checkSiNo.CheckOnClick, DateTime.Now, DateTime.Now.AddMinutes(25));
-                        if (unPedido + unaPizza == true)
-                        {
-                            comboBoxTipoPizza.Text = "";
-                            numericUpDownCantidad.Text = "";
-                            checkedListBoxCoccion.Text = "";
-                            checkSiNo.Visible = false;
-                            lblPedidoError.Text = "";
-                            lblPedidoError.Visible = false;
-                            listBoxPedidos.Items.Add(unaPizza);
-                            contadorCLICK++;
-                        }
-                        else
-                        {
-                            lblPedidoError.Text = "Error al sumar";
-                        }
-                    }
-                    else
-                    {
-                        unaPizza = new Pizza(Convert.ToDecimal(numericUpDownCantidad.Text), comboBoxTipoPizza.Text, checkedListBoxCoccion.Text);
-                        if (unPedido + unaPizza)
-                        {
-                            comboBoxTipoPizza.Text = "";
-                            numericUpDownCantidad.Text = "";
-                            checkedListBoxCoccion.Text = "";
-                            lblPedidoError.Text = "";
-                            lblPedidoError.Visible = false;
-                            listBoxPedidos.Items.Add(unaPizza);
-                            contadorCLICK++;
-                        }
-                    }
-                }else if (unCliente != null && !string.IsNullOrEmpty(comboBoxTipoPizza.Text)
-                            && !string.IsNullOrEmpty(numericUpDownCantidad.Text)
-                            && !(string.IsNullOrEmpty(checkSiNo.Text)) && contadorCLICK == 8)
-                {
-                        lblPedidoError.Text = "Alcanzo el Maximo de Pizzas.";
-                    lblPedidoError.Visible = true;
-                }
-                else
-                    {
-                        lblPedidoError.Text = "Faltan Datos del Pedido";
-                    lblPedidoError.Visible = true;
+                    CargarPizzas();
                 }
             }
             else
             {
-                lblPedidoError.Text = "Faltan Datos del Cliente";
-                lblPedidoError.Visible = true;
+                MessageBox.Show("Ingrese todos los datos");
+            }
+        }
+
+        private void CargarPizzas()
+        {
+            this.listPizzas.Items.Clear();
+
+            foreach (Pizza item in unPedido.pizzas)
+            {
+                this.listPizzas.Items.Add(item.MostrarPizza());
             }
 
-
-            
         }
+
+
+
+
+
+
     }//
 }//

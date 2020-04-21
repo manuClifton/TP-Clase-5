@@ -8,10 +8,10 @@ namespace Entidades
 {
     public class Pedido
     {
-        private bool envio;
-        private DateTime horaIngreso;
-        private DateTime horaRetira;
-        private Pizza[] pizzas;
+        public bool envio;
+        public DateTime horaIngreso;
+        public DateTime horaRetira;
+        public Pizza[] pizzas;
         private Cliente client;
 
 
@@ -21,12 +21,7 @@ namespace Entidades
             this.pizzas = new Pizza[8];
         }
 
-        public Pedido(Cliente cli, bool envio, DateTime ingreso, DateTime retiro):this(cli)
-        {
-            this.envio = envio;
-            this.horaIngreso = ingreso;
-            this.horaRetira = retiro;
-        }
+
 
         public static implicit operator Pedido(Cliente c)
          {
@@ -52,13 +47,18 @@ namespace Entidades
                   {
                     e.pizzas[i] = p;
                     return true;
-                    break;
                   }         
             }
 
             return false;
         }
 
+        public string MostrarPedido()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{this.client} {this.horaIngreso} {this.RetornarArrayPizzas()}");
+            return sb.ToString();
+        }
 
 
         public Pizza[] RetornarArrayPizzas()

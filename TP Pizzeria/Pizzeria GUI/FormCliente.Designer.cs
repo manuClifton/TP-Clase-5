@@ -28,49 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombreAlta = new System.Windows.Forms.TextBox();
+            this.btnCrearUsuario = new System.Windows.Forms.Button();
+            this.txtApellidoAlta = new System.Windows.Forms.TextBox();
+            this.txtDomicilioAlta = new System.Windows.Forms.TextBox();
             this.lblAltaNombre = new System.Windows.Forms.Label();
             this.lblAltaApellido = new System.Windows.Forms.Label();
             this.lblAltaDireccion = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancelarAlta = new System.Windows.Forms.Button();
+            this.lblDatos = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtNombreAlta
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.textBox1.Location = new System.Drawing.Point(126, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtNombreAlta.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txtNombreAlta.Location = new System.Drawing.Point(126, 45);
+            this.txtNombreAlta.Name = "txtNombreAlta";
+            this.txtNombreAlta.Size = new System.Drawing.Size(147, 20);
+            this.txtNombreAlta.TabIndex = 2;
             // 
-            // button1
+            // btnCrearUsuario
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Location = new System.Drawing.Point(176, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 34);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Crear Usuario";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCrearUsuario.BackColor = System.Drawing.Color.Silver;
+            this.btnCrearUsuario.Location = new System.Drawing.Point(176, 208);
+            this.btnCrearUsuario.Name = "btnCrearUsuario";
+            this.btnCrearUsuario.Size = new System.Drawing.Size(193, 34);
+            this.btnCrearUsuario.TabIndex = 7;
+            this.btnCrearUsuario.Text = "Crear Usuario";
+            this.btnCrearUsuario.UseVisualStyleBackColor = false;
+            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
             // 
-            // textBox2
+            // txtApellidoAlta
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.textBox2.Location = new System.Drawing.Point(126, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(147, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtApellidoAlta.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txtApellidoAlta.Location = new System.Drawing.Point(126, 97);
+            this.txtApellidoAlta.Name = "txtApellidoAlta";
+            this.txtApellidoAlta.Size = new System.Drawing.Size(147, 20);
+            this.txtApellidoAlta.TabIndex = 4;
             // 
-            // textBox3
+            // txtDomicilioAlta
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.textBox3.Location = new System.Drawing.Point(126, 145);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(147, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtDomicilioAlta.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txtDomicilioAlta.Location = new System.Drawing.Point(126, 145);
+            this.txtDomicilioAlta.Name = "txtDomicilioAlta";
+            this.txtDomicilioAlta.Size = new System.Drawing.Size(147, 20);
+            this.txtDomicilioAlta.TabIndex = 6;
             // 
             // lblAltaNombre
             // 
@@ -105,32 +107,46 @@
             this.lblAltaDireccion.TabIndex = 5;
             this.lblAltaDireccion.Text = "Direccion";
             // 
-            // button2
+            // btnCancelarAlta
             // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.Location = new System.Drawing.Point(34, 208);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 34);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCancelarAlta.BackColor = System.Drawing.Color.Silver;
+            this.btnCancelarAlta.Location = new System.Drawing.Point(34, 208);
+            this.btnCancelarAlta.Name = "btnCancelarAlta";
+            this.btnCancelarAlta.Size = new System.Drawing.Size(107, 34);
+            this.btnCancelarAlta.TabIndex = 8;
+            this.btnCancelarAlta.Text = "Cancelar";
+            this.btnCancelarAlta.UseVisualStyleBackColor = false;
+            this.btnCancelarAlta.Click += new System.EventHandler(this.btnCancelarAlta_Click);
             // 
-            // Nuevo_Pedido
+            // lblDatos
+            // 
+            this.lblDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatos.Location = new System.Drawing.Point(78, 9);
+            this.lblDatos.Name = "lblDatos";
+            this.lblDatos.Size = new System.Drawing.Size(227, 18);
+            this.lblDatos.TabIndex = 0;
+            this.lblDatos.Text = "Ingrese Datos del Cliente";
+            this.lblDatos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(381, 283);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.lblDatos);
+            this.Controls.Add(this.btnCancelarAlta);
             this.Controls.Add(this.lblAltaDireccion);
             this.Controls.Add(this.lblAltaApellido);
             this.Controls.Add(this.lblAltaNombre);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDomicilioAlta);
+            this.Controls.Add(this.txtApellidoAlta);
+            this.Controls.Add(this.btnCrearUsuario);
+            this.Controls.Add(this.txtNombreAlta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Nuevo_Pedido";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Cliente";
             this.ResumeLayout(false);
@@ -140,13 +156,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNombreAlta;
+        private System.Windows.Forms.Button btnCrearUsuario;
+        private System.Windows.Forms.TextBox txtApellidoAlta;
+        private System.Windows.Forms.TextBox txtDomicilioAlta;
         private System.Windows.Forms.Label lblAltaNombre;
         private System.Windows.Forms.Label lblAltaApellido;
         private System.Windows.Forms.Label lblAltaDireccion;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancelarAlta;
+        private System.Windows.Forms.Label lblDatos;
     }
 }

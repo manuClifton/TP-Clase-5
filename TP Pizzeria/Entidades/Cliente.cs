@@ -24,14 +24,14 @@ namespace Entidades
             this.nombre = nombre;
         }
 
-        public Cliente(string nombre, string domicilio):this(nombre)
-        {
-            this.domicilio = domicilio;
-        }
-
-        public Cliente(string nombre, string domicilio,string apellido) : this(nombre, domicilio)
+        public Cliente(string nombre, string apellido) :this(nombre)
         {
             this.apellido = apellido;
+        }
+
+        public Cliente(string nombre, string apellido, string domicilio) : this(nombre, apellido)
+        {
+            this.domicilio = domicilio;
         }
 
         public void SetNombre(string nombre)
@@ -45,6 +45,14 @@ namespace Entidades
         public void SetApellido(string apellido)
         {
             this.apellido = apellido;
+        }
+
+        public string MostrarCliente()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{this.nombre} {this.apellido} {this.domicilio}");
+            return sb.ToString();
+           // return this.nombre.ToString()+" "+this.apellido.ToString()+" "+this.domicilio.ToString();
         }
 
 
