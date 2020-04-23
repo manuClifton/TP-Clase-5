@@ -17,6 +17,8 @@ namespace Pizzeria_GUI
         public FormLogin()
         {
             InitializeComponent();
+            this.texAdmin.Text = "Admin";
+            this.textContraseña.Text = "admin123";
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)

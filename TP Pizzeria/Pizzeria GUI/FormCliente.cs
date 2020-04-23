@@ -21,6 +21,11 @@ namespace Pizzeria_GUI
 
         }
 
+        public FormCliente(Cliente cli):this()
+        {
+            unCliente = new Cliente(cli.GetNombre(), cli.GetApellido(), cli.GetDomicilio() );
+        }
+
 
 
         private void btnCancelarAlta_Click(object sender, EventArgs e)
@@ -41,6 +46,18 @@ namespace Pizzeria_GUI
             else
             {
                 MessageBox.Show("Todos los datos son obligatorios");
+            }
+        }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+            if ( !(unCliente is null) )
+            {
+                txtNombreAlta.Text = unCliente.GetNombre();
+                txtApellidoAlta.Text = unCliente.GetApellido();
+                txtDomicilioAlta.Text = unCliente.GetDomicilio();
+
+                btnCrearUsuario.Text = "Editar Usuario";
             }
         }
     }

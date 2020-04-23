@@ -51,13 +51,22 @@ namespace Entidades
 
         public static bool operator ==(Pizza a, Pizza b)
         {
+
+            if ( !(a is null) )
+            {
+                return (a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion);
+            }
+
+            return false;
+
             //bool igual = false;
             //if (a != null && a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion)
             //{
             //    igual = true;
             //}
             //return igual;
-            return (a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion);
+
+            //return a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion;
         }
 
 
@@ -69,7 +78,8 @@ namespace Entidades
             //    igual = false;
             //}
             //return igual;
-            return !( a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion);
+
+            return !( a == b);
         }
 
         

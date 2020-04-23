@@ -34,13 +34,27 @@ namespace Entidades
             this.domicilio = domicilio;
         }
 
+        public string GetNombre()
+        {
+            return this.nombre;
+        }
         public void SetNombre(string nombre)
         {
             this.nombre = nombre;
         }
-        public void SetDireccion(string domicilio)
+
+        public string GetDomicilio()
+        {
+            return this.domicilio;
+        }
+        public void SetDomicilio(string domicilio)
         {
             this.domicilio = domicilio;
+        }
+
+        public string GetApellido()
+        {
+            return this.apellido;
         }
         public void SetApellido(string apellido)
         {
@@ -50,7 +64,7 @@ namespace Entidades
         public string MostrarCliente()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"{this.nombre} {this.apellido} {this.domicilio}");
+            sb.Append($"{this.GetNombre()} {this.GetApellido()} {this.GetDomicilio()}");
             return sb.ToString();
            // return this.nombre.ToString()+" "+this.apellido.ToString()+" "+this.domicilio.ToString();
         }

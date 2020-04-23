@@ -15,6 +15,11 @@ namespace Entidades
         private Cliente client;
 
 
+        //public Pizza this[indice]
+        //{
+
+        //}
+
         private Pedido(Cliente cli)
         {
             this.client = cli;
@@ -53,17 +58,44 @@ namespace Entidades
             return false;
         }
 
+        public static bool operator -(Pedido e, Pizza p)
+        {
+
+            for (int i = 0; i < e.pizzas.Length; i++)
+            {
+                if ( !(e.pizzas[i] is null) && e.pizzas[i] == p )
+                {
+                    e.pizzas[i] = null;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
         public string MostrarPedido()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"{this.client} {this.horaIngreso} {this.RetornarArrayPizzas()}");
+            sb.Append($"{this.horaIngreso.ToString("hh:mm")} {this.client.GetNombre()} {this.GetGusto()} ");
             return sb.ToString();
         }
 
 
-        public Pizza[] RetornarArrayPizzas()
+        public string GetGusto()
         {
-            return this.pizzas;
+            StringBuilder sb = new StringBuilder();
+            foreach (Pizza item in this.pizzas)
+            {
+                if (!(item is null))
+                {
+                    sb.Append($"{item.GetGusto()}({item.GetCantidadPizzas()})");
+
+                }
+
+            }
+            return sb.ToString();
+
         }
 
 

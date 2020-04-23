@@ -149,6 +149,7 @@
             this.Name = "FormCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Cliente";
+            this.Load += new System.EventHandler(this.FormCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

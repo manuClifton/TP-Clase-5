@@ -105,6 +105,7 @@
             this.listPizzas.Name = "listPizzas";
             this.listPizzas.Size = new System.Drawing.Size(530, 186);
             this.listPizzas.TabIndex = 15;
+            this.listPizzas.SelectedIndexChanged += new System.EventHandler(this.listPizzas_SelectedIndexChanged);
             // 
             // btnAgregarPizza
             // 
@@ -170,6 +171,7 @@
             this.btnCancelarPedido.TabIndex = 22;
             this.btnCancelarPedido.Text = "Cancelar Pedido";
             this.btnCancelarPedido.UseVisualStyleBackColor = true;
+            this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
             // FormPedidos
             // 

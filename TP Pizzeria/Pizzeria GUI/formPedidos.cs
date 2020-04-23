@@ -9,8 +9,9 @@ namespace Pizzeria_GUI
     public partial class FormPedidos : Form
     {
         public Pedido unPedido;
+        public Pizza unaPizza;
 
-
+        int cantPizzas = 0;
 
         public FormPedidos(Cliente unCliente)
         {
@@ -24,9 +25,10 @@ namespace Pizzeria_GUI
         {
 
             // Validar
-            if (this.listPizzas.SelectedIndex != -1)
+            if (this.unPedido.pizzas.Length != 0)
             {
-               this.unPedido.horaIngreso = DateTime.Now;
+                
+                this.unPedido.horaIngreso = DateTime.Now;
                this.unPedido.envio = checkEnvio.Checked;
 
                this.DialogResult = DialogResult.OK;
@@ -35,7 +37,6 @@ namespace Pizzeria_GUI
             {
                 MessageBox.Show("Complete los datos que faltan");
             }
-            
         }
 
         private void btnAgregarPizza_Click(object sender, EventArgs e)
@@ -44,9 +45,15 @@ namespace Pizzeria_GUI
                  !(String.IsNullOrEmpty(cmbCoccion.Text)) &&
                  numCantidad.Value != 0  )
             {
-                if (this.unPedido + new Pizza(this.numCantidad.Value,this.cmbGusto.Text,this.cmbCoccion.Text))
+                unaPizza = new Pizza(this.numCantidad.Value, this.cmbGusto.Text, this.cmbCoccion.Text);
+
+                if ( this.unPedido + unaPizza)
                 {
-                    CargarPizzas();
+                     CargarPizzas();
+                }
+                else
+                {
+                    MessageBox.Show("No puede superar 8 Pizzas por pedido");
                 }
             }
             else
@@ -61,15 +68,27 @@ namespace Pizzeria_GUI
 
             foreach (Pizza item in unPedido.pizzas)
             {
-                this.listPizzas.Items.Add(item.MostrarPizza());
+                if ( !(item is null) )
+                {
+                    this.listPizzas.Items.Add(item.MostrarPizza());
+                }
             }
 
         }
 
+        private void listPizzas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.listPizzas.Items.Remove(listPizzas.SelectedIndex);
+            //sacar la pizza del pedido
+            if (this.unPedido - unaPizza)
+            {
+                CargarPizzas();
+            }
+        }
 
-
-
-
-
+        private void btnCancelarPedido_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
     }//
 }//

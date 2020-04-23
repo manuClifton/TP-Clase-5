@@ -16,7 +16,7 @@ namespace Pizzeria_GUI
         FormPedidos instanciaFormPedidos;
         FormCliente instanciaCliente;
 
-        Pedido unPedido;
+        ///&Pedido unPedido;
         List<Cliente> clientes;
         Queue<Pedido> pedidos;
 
@@ -46,16 +46,22 @@ namespace Pizzeria_GUI
             {
                 MessageBox.Show("Primero seleccione un cliente");
             }
-            
         }
 
         private void cargarPedidos()
         {
+
+            this.dgPendientes.Rows.Clear();
             foreach (Pedido item in this.pedidos)
             {
-                this.dgPendientes.Rows.Add(item.MostrarPedido());
+                if (!(item is null))
+                {
+                    this.dgPendientes.Rows.Add(item.MostrarPedido());
+                }
             }
         }
+
+
 
         //private void CargarTabla()
         //{
@@ -92,14 +98,41 @@ namespace Pizzeria_GUI
             listClientes.Items.Clear();
             foreach (Cliente item in this.clientes)
             {
-                listClientes.Items.Add(item.MostrarCliente());
+                if (!(item is null))
+                {
+                    listClientes.Items.Add(item.MostrarCliente());
+                }
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lb_HoraActual.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
 
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            this.timer1.Interval = 1000;
+            this.timer1.Enabled = true;
+        }
 
-
-
-
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
+            if (this.listClientes.SelectedIndex != -1)
+            {
+                instanciaCliente = new FormCliente((Cliente)this.clientes[this.listClientes.SelectedIndex]);
+                if (instanciaCliente.ShowDialog() == DialogResult.OK)
+                {
+                    this.clientes.Remove((Cliente)this.clientes[this.listClientes.SelectedIndex]);
+                    this.clientes.Add(instanciaCliente.unCliente);
+                    //this.listClientes.Items.Add(instanciaCliente.unCliente);
+                    cargarClientes();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el Cliente que desea editar");
+            }
+        }
     }//
 }//
