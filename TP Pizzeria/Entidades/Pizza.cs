@@ -19,22 +19,64 @@ namespace Entidades
             this.tipoCoccion = tipoCoccion;
         }
 
-        public string GetGusto() {
-            return this.gusto;
-        }
-        public string GetTipoCoccion()
+        public string Gusto
         {
-            return this.tipoCoccion;
+            get
+            {
+                return this.gusto;
+            }
+            set
+            {
+                this.gusto = value;
+            }
         }
-        public string GetCantidadPizzas()
+
+        public string TipoCoccion
         {
-            return this.cantidad.ToString();
+            get
+            {
+                return this.tipoCoccion;
+            }
+            set
+            {
+                this.tipoCoccion = value;
+            }
+        }
+
+        public string Cantidad
+        {
+            get
+            {
+                return this.cantidad.ToString();
+            }
+            set
+            {
+                this.gusto = value;
+            }
         }
 
         public string MostrarPizza()
         {
-            return "Gusto: "+GetGusto() + " Cocion:s " + GetTipoCoccion() + " Cantidad: " + GetCantidadPizzas();
+            return this.Gusto + this.TipoCoccion + this.Cantidad;
         }
+
+        //public string GetGusto() {
+        //    return this.gusto;
+        //}
+        //public string GetTipoCoccion()
+        //{
+        //    return this.tipoCoccion;
+        //}
+        //public string GetCantidadPizzas()
+        //{
+        //    return this.cantidad.ToString();
+        //}
+
+        //public string MostrarPizza()
+        //{
+        //    return GetGusto() + GetTipoCoccion() + GetCantidadPizzas();
+        //}
+
 
         public static bool operator +(Pizza uno, Pizza dos)
         {

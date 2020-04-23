@@ -77,29 +77,31 @@ namespace Entidades
         public string MostrarPedido()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"{this.horaIngreso.ToString("hh:mm")} {this.client.GetNombre()} {this.GetGusto()} ");
+            sb.Append($"{this.horaIngreso.ToString("hh:mm")} {this.client.Nombre} {this.GetGustoYCantidad()} ");
             return sb.ToString();
         }
 
 
-        public string GetGusto()
+        public string GetGustoYCantidad()
         {
             StringBuilder sb = new StringBuilder();
             foreach (Pizza item in this.pizzas)
             {
                 if (!(item is null))
                 {
-                    sb.Append($"{item.GetGusto()}({item.GetCantidadPizzas()})");
+                    sb.Append($"{item.Gusto}({item.Cantidad})");
 
                 }
 
             }
             return sb.ToString();
-
         }
 
 
-
+        public DateTime GetHoraIngreso()
+        {
+            return this.horaIngreso;
+        }
 
 
 

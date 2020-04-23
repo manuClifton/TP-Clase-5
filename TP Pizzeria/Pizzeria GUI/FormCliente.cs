@@ -23,7 +23,7 @@ namespace Pizzeria_GUI
 
         public FormCliente(Cliente cli):this()
         {
-            unCliente = new Cliente(cli.GetNombre(), cli.GetApellido(), cli.GetDomicilio() );
+            unCliente = new Cliente(cli.Nombre, cli.Apellido, cli.Domicilio );
         }
 
 
@@ -53,9 +53,9 @@ namespace Pizzeria_GUI
         {
             if ( !(unCliente is null) )
             {
-                txtNombreAlta.Text = unCliente.GetNombre();
-                txtApellidoAlta.Text = unCliente.GetApellido();
-                txtDomicilioAlta.Text = unCliente.GetDomicilio();
+                txtNombreAlta.Text = unCliente.Nombre;
+                txtApellidoAlta.Text = unCliente.Apellido;
+                txtDomicilioAlta.Text = unCliente.Domicilio;
 
                 btnCrearUsuario.Text = "Editar Usuario";
             }

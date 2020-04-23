@@ -34,37 +34,74 @@ namespace Entidades
             this.domicilio = domicilio;
         }
 
-        public string GetNombre()
+
+        public string Nombre
         {
-            return this.nombre;
-        }
-        public void SetNombre(string nombre)
-        {
-            this.nombre = nombre;
+            get
+            {
+                return this.nombre;
+            }
+            set
+            {
+                this.nombre = value;
+            }
         }
 
-        public string GetDomicilio()
+        public string Apellido
         {
-            return this.domicilio;
-        }
-        public void SetDomicilio(string domicilio)
-        {
-            this.domicilio = domicilio;
+            get
+            {
+                return this.apellido;
+            }
+            set
+            {
+                this.apellido = value;
+            }
         }
 
-        public string GetApellido()
+        public string Domicilio
         {
-            return this.apellido;
+            get
+            {
+                return this.domicilio;
+            }
+            set
+            {
+                this.domicilio = value;
+            }
         }
-        public void SetApellido(string apellido)
-        {
-            this.apellido = apellido;
-        }
+
+        //public string GetNombre()
+        //{
+        //    return this.nombre;
+        //}
+        //public void SetNombre(string nombre)
+        //{
+        //    this.nombre = nombre;
+        //}
+
+        //public string GetDomicilio()
+        //{
+        //    return this.domicilio;
+        //}
+        //public void SetDomicilio(string domicilio)
+        //{
+        //    this.domicilio = domicilio;
+        //}
+
+        //public string GetApellido()
+        //{
+        //    return this.apellido;
+        //}
+        //public void SetApellido(string apellido)
+        //{
+        //    this.apellido = apellido;
+        //}
 
         public string MostrarCliente()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"{this.GetNombre()} {this.GetApellido()} {this.GetDomicilio()}");
+            sb.Append($"{this.Nombre} {this.Apellido} {this.Domicilio}");
             return sb.ToString();
            // return this.nombre.ToString()+" "+this.apellido.ToString()+" "+this.domicilio.ToString();
         }

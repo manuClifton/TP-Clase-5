@@ -39,7 +39,7 @@ namespace Pizzeria_GUI
                 if (instanciaFormPedidos.ShowDialog() == DialogResult.OK)
                 {
                     this.pedidos.Enqueue(instanciaFormPedidos.unPedido);
-                    cargarPedidos();
+                    cargarPedidosPendiente();
                 }
             }
             else
@@ -48,7 +48,7 @@ namespace Pizzeria_GUI
             }
         }
 
-        private void cargarPedidos()
+        private void cargarPedidosPendiente()
         {
 
             this.dgPendientes.Rows.Clear();
@@ -61,6 +61,23 @@ namespace Pizzeria_GUI
             }
         }
 
+        private void cargarPedidosEntrega()
+        {
+            DateTime cambiar;
+
+            this.dgEntrega.Rows.Clear();
+            foreach (Pedido item in this.pedidos)
+            {
+                if (!(item is null))
+                {
+                    //if ( (item.horaIngreso ) >= (cambiar.))
+                    //{
+                    //    this.dgEntrega.Rows.Add(item.MostrarPedido());
+                    //}
+                    
+                }
+            }
+        }
 
 
         //private void CargarTabla()

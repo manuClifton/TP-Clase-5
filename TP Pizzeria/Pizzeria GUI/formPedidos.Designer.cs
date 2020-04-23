@@ -57,13 +57,6 @@
             // 
             this.cmbGusto.BackColor = System.Drawing.Color.AliceBlue;
             this.cmbGusto.FormattingEnabled = true;
-            this.cmbGusto.Items.AddRange(new object[] {
-            "Muzzarella",
-            "Fugazzeta",
-            "Especial",
-            "Anana(Un Boludo)",
-            "Calabreza",
-            "De la Casa"});
             this.cmbGusto.Location = new System.Drawing.Point(43, 266);
             this.cmbGusto.Name = "cmbGusto";
             this.cmbGusto.Size = new System.Drawing.Size(138, 21);
@@ -144,9 +137,6 @@
             // cmbCoccion
             // 
             this.cmbCoccion.FormattingEnabled = true;
-            this.cmbCoccion.Items.AddRange(new object[] {
-            "A la Piedra",
-            "Media Maza"});
             this.cmbCoccion.Location = new System.Drawing.Point(337, 267);
             this.cmbCoccion.Name = "cmbCoccion";
             this.cmbCoccion.Size = new System.Drawing.Size(114, 21);
@@ -195,6 +185,7 @@
             this.Name = "FormPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Pedido";
+            this.Load += new System.EventHandler(this.FormPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

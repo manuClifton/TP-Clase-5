@@ -6,12 +6,28 @@ using Entidades;
 
 namespace Pizzeria_GUI
 {
+    public enum Gustos
+    {
+        Muzzarela,
+        Fugaceta,
+        Calabresa,
+        Especial,
+        Anana,
+        Napolitana
+    }
+
+    public enum Coccion
+    {
+        A_la_Piedra = 1,
+        Media_Mazza 
+    }
+
     public partial class FormPedidos : Form
     {
         public Pedido unPedido;
         public Pizza unaPizza;
 
-        int cantPizzas = 0;
+        int cantidadPizzas = 0;
 
         public FormPedidos(Cliente unCliente)
         {
@@ -46,14 +62,16 @@ namespace Pizzeria_GUI
                  numCantidad.Value != 0  )
             {
                 unaPizza = new Pizza(this.numCantidad.Value, this.cmbGusto.Text, this.cmbCoccion.Text);
-
-                if ( this.unPedido + unaPizza)
+                cantidadPizzas += int.Parse(unaPizza.Cantidad);
+                if (cantidadPizzas <= 8 && this.unPedido + unaPizza  )
                 {
+
                      CargarPizzas();
                 }
                 else
                 {
-                    MessageBox.Show("No puede superar 8 Pizzas por pedido");
+                    MessageBox.Show("Maximo de Pizzas por pedido es 8");
+                    cantidadPizzas -= int.Parse(unaPizza.Cantidad);
                 }
             }
             else
@@ -89,6 +107,12 @@ namespace Pizzeria_GUI
         private void btnCancelarPedido_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void FormPedidos_Load(object sender, EventArgs e)
+        {
+            cmbGusto.DataSource = Enum.GetNames(typeof (Gustos));
+            cmbCoccion.DataSource = Enum.GetNames(typeof (Coccion));
         }
     }//
 }//
