@@ -31,10 +31,8 @@
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.lblInicioUsuario = new System.Windows.Forms.Label();
             this.lblInicioConstraseña = new System.Windows.Forms.Label();
-            this.texAdmin = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.textContraseña = new System.Windows.Forms.TextBox();
-            this.lblInicioAdmin = new System.Windows.Forms.Label();
-            this.lblInicioPassAdmin = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -76,14 +74,14 @@
             this.lblInicioConstraseña.TabIndex = 3;
             this.lblInicioConstraseña.Text = "Contraseña";
             // 
-            // texAdmin
+            // txtUsuario
             // 
-            this.texAdmin.BackColor = System.Drawing.SystemColors.Menu;
-            this.texAdmin.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.texAdmin.Location = new System.Drawing.Point(162, 77);
-            this.texAdmin.Name = "texAdmin";
-            this.texAdmin.Size = new System.Drawing.Size(180, 20);
-            this.texAdmin.TabIndex = 2;
+            this.txtUsuario.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsuario.Location = new System.Drawing.Point(162, 77);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(180, 20);
+            this.txtUsuario.TabIndex = 2;
             // 
             // textContraseña
             // 
@@ -94,26 +92,6 @@
             this.textContraseña.Size = new System.Drawing.Size(180, 20);
             this.textContraseña.TabIndex = 4;
             this.textContraseña.UseSystemPasswordChar = true;
-            // 
-            // lblInicioAdmin
-            // 
-            this.lblInicioAdmin.AutoSize = true;
-            this.lblInicioAdmin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.lblInicioAdmin.Location = new System.Drawing.Point(365, 84);
-            this.lblInicioAdmin.Name = "lblInicioAdmin";
-            this.lblInicioAdmin.Size = new System.Drawing.Size(36, 13);
-            this.lblInicioAdmin.TabIndex = 6;
-            this.lblInicioAdmin.Text = "Admin";
-            // 
-            // lblInicioPassAdmin
-            // 
-            this.lblInicioPassAdmin.AutoSize = true;
-            this.lblInicioPassAdmin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.lblInicioPassAdmin.Location = new System.Drawing.Point(365, 144);
-            this.lblInicioPassAdmin.Name = "lblInicioPassAdmin";
-            this.lblInicioPassAdmin.Size = new System.Drawing.Size(54, 13);
-            this.lblInicioPassAdmin.TabIndex = 7;
-            this.lblInicioPassAdmin.Text = "Admin123";
             // 
             // lblError
             // 
@@ -133,10 +111,8 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(518, 308);
             this.Controls.Add(this.lblError);
-            this.Controls.Add(this.lblInicioPassAdmin);
-            this.Controls.Add(this.lblInicioAdmin);
             this.Controls.Add(this.textContraseña);
-            this.Controls.Add(this.texAdmin);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblInicioConstraseña);
             this.Controls.Add(this.lblInicioUsuario);
             this.Controls.Add(this.btnIniciarSesion);
@@ -154,10 +130,8 @@
         private System.Windows.Forms.Button btnIniciarSesion;
         private System.Windows.Forms.Label lblInicioUsuario;
         private System.Windows.Forms.Label lblInicioConstraseña;
-        private System.Windows.Forms.TextBox texAdmin;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox textContraseña;
-        private System.Windows.Forms.Label lblInicioAdmin;
-        private System.Windows.Forms.Label lblInicioPassAdmin;
         private System.Windows.Forms.Label lblError;
     }
 }

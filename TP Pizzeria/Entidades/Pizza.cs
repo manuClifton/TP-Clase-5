@@ -100,26 +100,11 @@ namespace Entidades
             }
 
             return false;
-
-            //bool igual = false;
-            //if (a != null && a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion)
-            //{
-            //    igual = true;
-            //}
-            //return igual;
-
-            //return a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion;
         }
 
 
         public static bool operator !=(Pizza a, Pizza b)
         {
-            //bool igual = true;
-            //if (a != null && a.gusto == b.gusto && a.tipoCoccion == b.tipoCoccion)
-            //{
-            //    igual = false;
-            //}
-            //return igual;
 
             return !( a == b);
         }

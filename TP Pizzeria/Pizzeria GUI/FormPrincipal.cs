@@ -15,23 +15,24 @@ namespace Pizzeria_GUI
     {
         FormPedidos instanciaFormPedidos;
         FormCliente instanciaCliente;
+        FormUsuario instanciaUsuario;
+        FormLogin instanciaLogin;
 
-        ///&Pedido unPedido;
         List<Cliente> clientes;
         Queue<Pedido> pedidos;
+        Usuario unUsuario;
 
 
-        public FormPrincipal()
+        public FormPrincipal(Usuario usuario)
         {
             InitializeComponent();
             this.pedidos = new Queue<Pedido>();
             this.clientes = new List<Cliente>();
+            unUsuario = usuario;
         }
 
 
-
-
-         private void btnNuevoPedido_Click(object sender, EventArgs e)
+        private void nuevoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (this.listClientes.SelectedIndex != -1)
             {
@@ -79,6 +80,47 @@ namespace Pizzeria_GUI
             }
         }
 
+        private void nuevoClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            instanciaCliente = new FormCliente();
+            if (instanciaCliente.ShowDialog() == DialogResult.OK)
+            {
+                this.clientes.Add(instanciaCliente.unCliente);
+                //this.listClientes.Items.Add(instanciaCliente.unCliente);
+                cargarClientes();
+            }
+        }
+
+        private void editarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.listClientes.SelectedIndex != -1)
+            {
+                instanciaCliente = new FormCliente((Cliente)this.clientes[this.listClientes.SelectedIndex]);
+                if (instanciaCliente.ShowDialog() == DialogResult.OK)
+                {
+                    //this.clientes.Remove((Cliente)this.clientes[this.listClientes.SelectedIndex]);
+                    //this.clientes.Add(instanciaCliente.unCliente);
+                    //this.listClientes.Items.Add(instanciaCliente.unCliente);
+                    cargarClientes();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el Cliente que desea editar");
+            }
+        }
+        private void cargarClientes()
+        {
+            listClientes.Items.Clear();
+            foreach (Cliente item in this.clientes)
+            {
+                if (!(item is null))
+                {
+                    listClientes.Items.Add(item.MostrarCliente());
+                }
+            }
+        }
+
 
         //private void CargarTabla()
         //{
@@ -97,31 +139,6 @@ namespace Pizzeria_GUI
         //}
 
 
-
-        private void btnNuevoCliente_Click(object sender, EventArgs e)
-        {
-            instanciaCliente = new FormCliente();
-            if (instanciaCliente.ShowDialog() == DialogResult.OK)
-            {
-                this.clientes.Add(instanciaCliente.unCliente);
-                //this.listClientes.Items.Add(instanciaCliente.unCliente);
-                cargarClientes();
-            }
-        }
-
-
-        private void cargarClientes()
-        {
-            listClientes.Items.Clear();
-            foreach (Cliente item in this.clientes)
-            {
-                if (!(item is null))
-                {
-                    listClientes.Items.Add(item.MostrarCliente());
-                }
-            }
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             lb_HoraActual.Text = DateTime.Now.ToString("hh:mm:ss");
@@ -131,25 +148,34 @@ namespace Pizzeria_GUI
         {
             this.timer1.Interval = 1000;
             this.timer1.Enabled = true;
+
+            lb_FPUsuario.Text = "Bienvenido" + unUsuario.NombreUsuario;
         }
 
-        private void btnEditarCliente_Click(object sender, EventArgs e)
+        private void editarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.listClientes.SelectedIndex != -1)
+            //Crear nueva instancia de formulario Usuario
+            instanciaUsuario = new FormUsuario(unUsuario);
+            if (instanciaUsuario.ShowDialog() == DialogResult.OK)
             {
-                instanciaCliente = new FormCliente((Cliente)this.clientes[this.listClientes.SelectedIndex]);
-                if (instanciaCliente.ShowDialog() == DialogResult.OK)
-                {
-                    this.clientes.Remove((Cliente)this.clientes[this.listClientes.SelectedIndex]);
-                    this.clientes.Add(instanciaCliente.unCliente);
-                    //this.listClientes.Items.Add(instanciaCliente.unCliente);
-                    cargarClientes();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione el Cliente que desea editar");
+                MessageBox.Show("Se modificó la Contraseña");
             }
         }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Desea Cerrar?", "Cerrar Sesion", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+                instanciaLogin = new FormLogin();
+                instanciaLogin.Show();
+            }
+        }
+
+
+
+
+
     }//
 }//

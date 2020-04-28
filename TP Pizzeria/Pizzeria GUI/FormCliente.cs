@@ -23,7 +23,7 @@ namespace Pizzeria_GUI
 
         public FormCliente(Cliente cli):this()
         {
-            unCliente = new Cliente(cli.Nombre, cli.Apellido, cli.Domicilio );
+            unCliente = new Cliente(cli.Nombre, cli.Apellido, cli.Domicilio, cli.Telefono );
         }
 
 
@@ -37,11 +37,26 @@ namespace Pizzeria_GUI
         {
             if ( !(String.IsNullOrEmpty(txtNombreAlta.Text)) &&
                  !(String.IsNullOrEmpty(txtApellidoAlta.Text)) &&
-                 !(String.IsNullOrEmpty(txtDomicilioAlta.Text)))
+                 !(String.IsNullOrEmpty(txtDomicilioAlta.Text)) &&
+                 !(String.IsNullOrEmpty(txtTelefonoAlta.Text))
+                 )
             {
-                unCliente = new Cliente(this.txtNombreAlta.Text ,this.txtApellidoAlta.Text,this.txtDomicilioAlta.Text);
+                if(unCliente is null)
+                {
+                    unCliente = new Cliente(this.txtNombreAlta.Text, this.txtApellidoAlta.Text, this.txtDomicilioAlta.Text,
+                   this.txtTelefonoAlta.Text);
 
-                this.DialogResult = DialogResult.OK;
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    unCliente.Nombre = txtNombreAlta.Text;
+                    unCliente.Apellido = txtApellidoAlta.Text;
+                    unCliente.Domicilio = txtDomicilioAlta.Text;
+                    unCliente.Telefono = txtTelefonoAlta.Text;
+                    this.DialogResult = DialogResult.OK;
+                }
+               
             }
             else
             {
@@ -56,6 +71,7 @@ namespace Pizzeria_GUI
                 txtNombreAlta.Text = unCliente.Nombre;
                 txtApellidoAlta.Text = unCliente.Apellido;
                 txtDomicilioAlta.Text = unCliente.Domicilio;
+                txtTelefonoAlta.Text = unCliente.Telefono;
 
                 btnCrearUsuario.Text = "Editar Usuario";
             }

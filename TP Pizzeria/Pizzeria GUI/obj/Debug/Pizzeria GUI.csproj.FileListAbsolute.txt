@@ -30,3 +30,4 @@ C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GU
 C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.csproj.CopyComplete
 C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.exe
 C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria GUI.pdb
+C:\Users\manu_\Desktop\TP-Clase-5\TP Pizzeria\Pizzeria GUI\obj\Debug\Pizzeria_GUI.FormUsuario.resources

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace Pizzeria_GUI
 {
@@ -14,26 +15,41 @@ namespace Pizzeria_GUI
     {
         FormPrincipal instanciaFormPrincipal;
 
+        public List<Usuario> usuarios;
+        public Usuario usuario;
+
         public FormLogin()
         {
             InitializeComponent();
-            this.texAdmin.Text = "Admin";
-            this.textContraseña.Text = "admin123";
+            //this.texAdmin.Text = "Admin";
+            //this.textContraseña.Text = "admin123";
+            usuarios = new List<Usuario>();
+
+            usuario = new Usuario("Manuel", "Clifton", "San Juan 39", "1160313333", "Manu", "123", "1", EPuesto.AtencionPublico);
+            usuarios.Add(usuario);
         }
+
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrEmpty(texAdmin.Text)) && !(string.IsNullOrEmpty(textContraseña.Text)))
+            bool esta = false;
+            if (!(string.IsNullOrEmpty(txtUsuario.Text)) && !(string.IsNullOrEmpty(textContraseña.Text)))
             {
-                if (texAdmin.Text == "Admin" && textContraseña.Text == "admin123")
+                for (int i = 0; i < usuarios.Count; i++)
                 {
-                    lblError.Visible = false;
-                    lblError.Text = "";
-                    instanciaFormPrincipal = new FormPrincipal();
-                    instanciaFormPrincipal.Show();
-                    this.Hide();
+                    if(usuarios[i].NombreUsuario == txtUsuario.Text && usuarios[i].Pass == textContraseña.Text)
+                    {
+                        lblError.Visible = false;
+                        lblError.Text = "";
+                        instanciaFormPrincipal = new FormPrincipal(usuarios[i]);
+                        instanciaFormPrincipal.Show();
+                        this.Hide();
+                        esta = true;
+                        break;
+                    }
                 }
-                else
+ 
+                if (!(esta))
                 {
                     lblError.Visible = true;
                     lblError.Text = "Acceso denegado. Almenos uno de los datos es incorrecto";
